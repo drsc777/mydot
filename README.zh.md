@@ -2,6 +2,8 @@
 
 这个仓库包含了我的完整开发环境配置，基于无鼠标操作理念，专注于高效编程体验。
 
+[English Documentation (英文文档)](README.md)
+
 ## 快速安装
 
 ```bash
@@ -43,8 +45,12 @@ mydot/
 │   └── sync-notes.sh     # 笔记自动同步到GitHub
 ├── .aerospace.toml      # Aerospace窗口管理器配置
 └── docs/                 # 文档
-    ├── setup-guide.md    # 安装指南
-    └── keyboard-shortcuts.md # 快捷键参考
+    ├── setup-guide.md    # 安装指南 (英文)
+    ├── setup-guide.zh.md # 安装指南 (中文)
+    ├── keyboard-shortcuts.md    # 快捷键参考 (英文)
+    ├── keyboard-shortcuts.zh.md # 快捷键参考 (中文)
+    ├── config-explanation.md    # 配置文件详解 (英文)
+    └── config-explanation.zh.md # 配置文件详解 (中文)
 ```
 
 ## 特色功能
@@ -57,24 +63,23 @@ mydot/
 
 ## 安装指南
 
-详细安装步骤请查看 [安装指南](docs/setup-guide.md)
+详细安装步骤请查看 [安装指南](docs/setup-guide.zh.md)
 
 ## 快捷键参考
 
-所有重要快捷键的完整列表请参考 [快捷键指南](docs/keyboard-shortcuts.md)
+所有重要快捷键的完整列表请参考 [快捷键指南](docs/keyboard-shortcuts.zh.md)
 
 ## 文档
 
-- 所有文档支持中英双语
+- 所有文档都提供中英双语版本
+- 每个文档有两个版本：
+  - 主版本（英文）：`文件名.md`
+  - 中文版本：`文件名.zh.md`
 - 安装脚本有中英文两个版本（`install.sh` 和 `install_en.sh`）
-- 还提供了完全英文的安装指南 `docs/setup-guide-en.md`
 
 ## 配置文件说明
 
-- **Doom Emacs**: 配置了Org-mode、自动折叠、TODO管理、笔记链接等功能
-- **NeoVim**: 集成了LSP、Treesitter、Telescope、自动保存等功能
-- **Tmux**: 配置了Vim式导航、会话恢复和窗口管理
-- **脚本**: 提供了笔记同步和Cursor AI集成功能
+有关所有配置文件的详细说明，请参阅[配置文件详解](docs/config-explanation.zh.md)
 
 ## 许可证
 

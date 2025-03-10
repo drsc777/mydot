@@ -45,9 +45,12 @@ mydot/
 │   └── sync-notes.sh     # Auto-sync notes to GitHub
 ├── .aerospace.toml      # Aerospace window manager configuration
 └── docs/                 # Documentation
-    ├── setup-guide.md    # Installation guide (Chinese)
-    ├── setup-guide-en.md # Installation guide (English)
-    └── keyboard-shortcuts.md # Keyboard shortcuts reference
+    ├── setup-guide.md    # Installation guide (English)
+    ├── setup-guide.zh.md # Installation guide (Chinese)
+    ├── keyboard-shortcuts.md    # Keyboard shortcuts reference (English)
+    ├── keyboard-shortcuts.zh.md # Keyboard shortcuts reference (Chinese)
+    ├── config-explanation.md    # Configuration explanation (English)
+    └── config-explanation.zh.md # Configuration explanation (Chinese)
 ```
 
 ## Key Features
@@ -60,7 +63,7 @@ mydot/
 
 ## Installation Guide
 
-For detailed installation steps, please check the [Installation Guide](docs/setup-guide-en.md)
+For detailed installation steps, please check the [Installation Guide](docs/setup-guide.md)
 
 ## Keyboard Shortcuts Reference
 
@@ -68,16 +71,15 @@ For a complete list of all important keyboard shortcuts, please refer to the [Ke
 
 ## Documentation
 
-- All documentation supports both Chinese and English
-- Installation scripts are available in both Chinese and English (`install.sh` and `install_en.sh`)
-- A fully English installation guide is provided at `docs/setup-guide-en.md`
+- All documentation is available in both English and Chinese
+- Each document has two versions:
+  - Main version (English): `filename.md`
+  - Chinese version: `filename.zh.md`
+- Installation scripts are available in both languages (`install.sh` and `install_en.sh`)
 
 ## Configuration Files Explanation
 
-- **Doom Emacs**: Configured with Org-mode, auto-folding, TODO management, note linking, etc.
-- **NeoVim**: Integrated with LSP, Treesitter, Telescope, auto-save, etc.
-- **Tmux**: Configured with Vim-style navigation, session restoration, and window management
-- **Scripts**: Provides note synchronization and Cursor AI integration
+For a detailed explanation of all configuration files, see the [Configuration Files Guide](docs/config-explanation.md)
 
 ## License
 

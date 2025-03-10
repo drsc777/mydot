@@ -1,242 +1,170 @@
-# 快捷键指南
+# Keyboard Shortcuts Guide
 
-这篇指南包含了所有工具的关键快捷键，帮助你高效地无鼠标工作。
+This guide contains key shortcuts for all tools, helping you work efficiently without a mouse.
 
-## 导航原则
+## Navigation Principles
 
-在这套配置中：
-- **空格键**通常是主要命令键（Leader键）
-- **C-** 表示按住 Ctrl 键
-- **M-** 表示按住 Alt/Option 键
-- **S-** 表示按住 Shift 键
+In this configuration:
+- **Space key** is usually the main command key (Leader key)
+- **C-** means holding the Ctrl key
+- **M-** means holding the Alt/Option key
+- **S-** means holding the Shift key
 
-## 目录
-- [Doom Emacs快捷键](#doom-emacs快捷键)
-- [NeoVim快捷键](#neovim快捷键)
-- [Tmux快捷键](#tmux快捷键)
-- [Aerospace快捷键](#aerospace快捷键)
-- [通用工作流程](#通用工作流程)
+## Table of Contents
+- [Doom Emacs Shortcuts](#doom-emacs-shortcuts)
+- [NeoVim Shortcuts](#neovim-shortcuts)
+- [Tmux Shortcuts](#tmux-shortcuts)
+- [Aerospace Shortcuts](#aerospace-shortcuts)
+- [General Workflow](#general-workflow)
 
-## Doom Emacs快捷键
+## Doom Emacs Shortcuts
 
-### 基础操作
+### Basic Operations
 
-| 快捷键 | 功能 |
-|-------|-----|
-| `SPC` | Leader键（主命令键） |
-| `SPC .` | 打开文件 |
-| `SPC ,` | 切换缓冲区 |
-| `SPC b b` | 列出所有缓冲区 |
-| `SPC f s` | 保存文件 |
-| `SPC q q` | 退出Emacs |
-| `SPC w v` | 垂直分割窗口 |
-| `SPC w s` | 水平分割窗口 |
-| `SPC w w` | 切换窗口 |
-| `SPC w c` | 关闭当前窗口 |
+| Shortcut | Function |
+|----------|----------|
+| `SPC` | Leader key (main command key) |
+| `SPC .` | Open file |
+| `SPC ,` | Switch buffer |
+| `SPC b b` | List all buffers |
+| `SPC f s` | Save file |
+| `SPC f f` | Find file |
+| `SPC q q` | Quit Emacs |
+| `SPC w v` | Split window vertically |
+| `SPC w s` | Split window horizontally |
+| `SPC w w` | Switch window |
+| `SPC w c` | Close window |
 
 ### Org Mode
 
-| 快捷键 | 功能 |
-|-------|-----|
-| `TAB` | 折叠/展开当前标题 |
-| `S-TAB` | 全局折叠/展开 |
-| `C-c C-t` | 切换TODO状态 |
-| `C-c C-c` | 完成任务/添加标签 |
-| `C-c C-d` | 添加截止日期 |
-| `C-c C-s` | 添加计划日期 |
-| `C-c '` | 编辑代码块 |
-| `C-c C-e` | 导出文档 |
+| Shortcut | Function |
+|----------|----------|
+| `SPC m h` | Insert header |
+| `SPC m i` | Insert item |
+| `SPC m t` | Insert TODO |
+| `SPC m d` | Insert DONE |
+| `TAB` | Fold/unfold section |
+| `S-TAB` | Fold/unfold all |
+| `C-c C-t` | Cycle TODO state |
+| `C-c C-s` | Schedule item |
+| `C-c C-d` | Set deadline |
 
-### Org-roam
+### Org Roam
 
-| 快捷键 | 功能 |
-|-------|-----|
-| `C-c n l` | 打开/关闭侧边栏 |
-| `C-c n f` | 查找/创建笔记 |
-| `C-c n i` | 插入笔记链接 |
-| `C-c n c` | 捕获新笔记 |
-| `C-c n j` | 创建/查看今日日记 |
-| `C-c n g` | 查看知识图谱 |
+| Shortcut | Function |
+|----------|----------|
+| `SPC n r f` | Find note |
+| `SPC n r i` | Insert link |
+| `SPC n r I` | Insert node |
+| `SPC n r c` | Capture new note |
+| `SPC n r t` | Toggle roam buffer |
 
-### 搜索
+## NeoVim Shortcuts
 
-| 快捷键 | 功能 |
-|-------|-----|
-| `SPC s s` | 搜索当前缓冲区 |
-| `SPC s p` | 在项目中搜索 |
-| `SPC s d` | 在目录中搜索 |
+### Basic Navigation
 
-### 项目
+| Shortcut | Function |
+|----------|----------|
+| `h, j, k, l` | Move left, down, up, right |
+| `w, b` | Move forward/backward by word |
+| `0, $` | Move to start/end of line |
+| `gg, G` | Move to start/end of file |
+| `Ctrl+u, Ctrl+d` | Scroll half-page up/down |
+| `{, }` | Move between paragraphs |
+| `%` | Jump to matching bracket |
 
-| 快捷键 | 功能 |
-|-------|-----|
-| `SPC p p` | 切换项目 |
-| `SPC o p` | 打开项目文件树 |
+### Editing
 
-## NeoVim快捷键
+| Shortcut | Function |
+|----------|----------|
+| `i, a` | Enter insert mode (at/after cursor) |
+| `o, O` | Insert new line below/above |
+| `v, V` | Enter visual mode (character/line) |
+| `y, d, c` | Yank (copy), delete, change |
+| `p, P` | Paste after/before cursor |
+| `u, Ctrl+r` | Undo, redo |
+| `.` | Repeat last command |
 
-### 模式切换
+### Custom Mappings
 
-| 快捷键 | 功能 |
-|-------|-----|
-| `i` | 进入插入模式 |
-| `Esc` | 返回普通模式 |
-| `v` | 进入可视模式 |
-| `:` | 进入命令模式 |
+| Shortcut | Function |
+|----------|----------|
+| `<Space>` | Leader key |
+| `<Space>ff` | Find files |
+| `<Space>fg` | Live grep |
+| `<Space>fb` | Buffers |
+| `<Space>fh` | Help tags |
+| `Ctrl+h/j/k/l` | Navigate between splits |
+| `<Space>e` | Toggle file explorer |
+| `<Space>w` | Save file |
+| `<Space>q` | Close buffer |
+| `<Space>h` | Clear search highlight |
 
-### 基本导航
+## Tmux Shortcuts
 
-| 快捷键 | 功能 |
-|-------|-----|
-| `h j k l` | 左下上右移动 |
-| `w` | 移动到下一个词首 |
-| `b` | 移动到前一个词首 |
-| `e` | 移动到词尾 |
-| `0` | 移动到行首 |
-| `$` | 移动到行尾 |
-| `gg` | 移动到文件开头 |
-| `G` | 移动到文件末尾 |
-| `Ctrl-u` | 向上翻半页 |
-| `Ctrl-d` | 向下翻半页 |
+### Session Management
 
-### 编辑操作
+| Shortcut | Function |
+|----------|----------|
+| `Ctrl+a c` | Create new window |
+| `Ctrl+a w` | List windows |
+| `Ctrl+a n` | Next window |
+| `Ctrl+a p` | Previous window |
+| `Ctrl+a ,` | Rename window |
+| `Ctrl+a &` | Kill window |
+| `Ctrl+a d` | Detach from session |
+| `Ctrl+a s` | List sessions |
+| `Ctrl+a $` | Rename session |
 
-| 快捷键 | 功能 |
-|-------|-----|
-| `yy` | 复制一行 |
-| `dd` | 删除一行 |
-| `p` | 粘贴 |
-| `u` | 撤销 |
-| `Ctrl-r` | 重做 |
-| `x` | 删除光标处字符 |
-| `r` | 替换光标处字符 |
-| `ciw` | 删除并修改整个词 |
-| `diw` | 删除整个词 |
+### Pane Management
 
-### 文件操作
+| Shortcut | Function |
+|----------|----------|
+| `Ctrl+a |` | Split pane vertically |
+| `Ctrl+a -` | Split pane horizontally |
+| `Ctrl+a h/j/k/l` | Navigate between panes |
+| `Ctrl+a z` | Toggle pane zoom |
+| `Ctrl+a x` | Kill pane |
+| `Ctrl+a {, }` | Swap panes |
+| `Ctrl+a q` | Show pane numbers |
+| `Ctrl+a o` | Rotate panes |
 
-| 快捷键 | 功能 |
-|-------|-----|
-| `:w` | 保存 |
-| `:q` | 退出 |
-| `:wq` | 保存并退出 |
-| `:q!` | 不保存强制退出 |
+## Aerospace Shortcuts
 
-### 插件功能
+### Window Management
 
-| 快捷键 | 功能 |
-|-------|-----|
-| `<Space>ff` | 查找文件 (Telescope) |
-| `<Space>fg` | 全局搜索 (Telescope) |
-| `<Space>fb` | 浏览缓冲区 (Telescope) |
-| `<Space>e` | 打开文件树 (NvimTree) |
-| `<Tab>` | 接受AI补全 (Copilot) |
-| `Ctrl-p` | 查找文件 (Telescope) |
-| `Ctrl-g` | 全局搜索 (Telescope) |
-| `gc` | 注释/取消注释 (Comment.nvim) |
+| Shortcut | Function |
+|----------|----------|
+| `Alt+h/j/k/l` | Move focus between windows |
+| `Alt+Shift+h/j/k/l` | Resize focused window |
+| `Alt+1-9` | Switch to workspace 1-9 |
+| `Alt+Shift+1-9` | Move window to workspace 1-9 |
+| `Alt+f` | Toggle fullscreen |
+| `Alt+Shift+f` | Toggle floating mode |
+| `Alt+Shift+space` | Center floating window |
+| `Alt+Shift+e` | Balance windows |
 
-### 窗口管理
+## General Workflow
 
-| 快捷键 | 功能 |
-|-------|-----|
-| `Ctrl-h/j/k/l` | 在窗口间移动 |
-| `<Shift-l>` | 下一个缓冲区 |
-| `<Shift-h>` | 上一个缓冲区 |
+Typical workflow patterns:
 
-## Tmux快捷键
+1. **Starting a coding session**:
+   - Launch terminal: `⌘+Space` → "Terminal"
+   - Start tmux: `tmux` or `tmux attach`
+   - Split panes as needed: `Ctrl+a |` and `Ctrl+a -`
+   - Navigate to project directory: `cd project`
+   - Open NeoVim: `nvim`
 
-> 注意：前缀键被设置为`Ctrl+a`
+2. **Taking notes**:
+   - Launch Emacs: `⌘+Space` → "Emacs"
+   - Open Org Roam: `SPC n r f` to find notes or `SPC n r c` to create new note
+   - Work with TODO items: `SPC m t` to add TODOs
+   - Schedule tasks: `C-c C-s`
 
-### 会话管理
+3. **AI-assisted coding**:
+   - Work in NeoVim/Cursor
+   - Start sync script: `sync-cursor project-dir`
+   - Use GitHub Copilot with `Tab` to accept completions
+   - In Cursor, use AI features with `⌘+K`
 
-| 快捷键 | 功能 |
-|-------|-----|
-| `Ctrl+a c` | 创建新窗口 |
-| `Ctrl+a ,` | 重命名窗口 |
-| `Ctrl+a w` | 列出所有窗口 |
-| `Ctrl+a n` | 下一个窗口 |
-| `Ctrl+a p` | 上一个窗口 |
-| `Ctrl+a d` | 断开会话 |
-| `Ctrl+a Space` | 切换到上一个窗口 |
-
-### 窗格操作
-
-| 快捷键 | 功能 |
-|-------|-----|
-| `Ctrl+a |` | 垂直分割 |
-| `Ctrl+a -` | 水平分割 |
-| `Ctrl+a h/j/k/l` | 在窗格间导航 |
-| `Ctrl+a x` | 关闭当前窗格 |
-| `Ctrl+a z` | 窗格全屏切换 |
-
-### 其他
-
-| 快捷键 | 功能 |
-|-------|-----|
-| `Ctrl+a ?` | 显示快捷键帮助 |
-| `Ctrl+a I` | 安装插件 |
-
-## Aerospace快捷键
-
-### 窗口控制
-
-| 快捷键 | 功能 |
-|-------|-----|
-| `Cmd + Enter` | 打开终端 |
-| `Cmd + w` | 关闭窗口 |
-| `Cmd + [数字]` | 切换到对应工作区 |
-
-### 布局控制
-
-| 快捷键 | 功能 |
-|-------|-----|
-| `Cmd + j/k` | 在窗口间切换焦点 |
-| `Cmd + Shift + h/l` | 调整窗口大小 |
-| `Cmd + f` | 切换全屏 |
-
-### 工作区管理
-
-| 快捷键 | 功能 |
-|-------|-----|
-| `Cmd + Tab` | 切换工作区 |
-| `Cmd + Shift + [数字]` | 移动窗口到指定工作区 |
-
-## 通用工作流程
-
-以下是一些常用的工作流程示例：
-
-### 编程工作流
-
-1. 使用 `Aerospace` 创建工作区布局
-2. 用 `Tmux` 分割终端窗口
-3. 在一个窗格中运行 NeoVim，在另一个窗格中运行编译/测试
-4. 使用 NeoVim 的 `<Space>ff` 打开文件
-5. 通过 Copilot 获取代码建议 (`<Tab>` 接受)
-6. 使用 `gc` 注释代码
-7. 按 `Ctrl+h/j/k/l` 在Tmux窗格之间导航
-
-### 笔记工作流
-
-1. 打开 Doom Emacs
-2. 使用 `C-c n f` 查找或创建笔记
-3. 使用 `C-c n i` 插入链接到其他笔记
-4. 按 `TAB` 折叠/展开标题
-5. 使用 `C-c '` 编辑代码块
-6. 用 `C-c C-t` 管理TODO状态
-7. 笔记会自动保存并同步到GitHub
-
-### 混合工作环境
-
-1. 在 Aerospace 的一个工作区打开 Emacs（笔记）
-2. 在另一个工作区打开 Tmux+NeoVim（编码）
-3. 使用 `Cmd+[数字]` 在工作区之间快速切换
-4. 用 `sync-cursor` 命令启动 Cursor AI 与 NeoVim 的同步
-
-## 自定义快捷键
-
-如果需要自定义快捷键：
-
-- Doom Emacs: 编辑 `~/.doom.d/config.el`
-- NeoVim: 编辑 `~/.config/nvim/init.lua`
-- Tmux: 编辑 `~/.tmux.conf`
-- Aerospace: 编辑 `~/.config/aerospace/config.toml` 
+*Note: Chinese users can also check the [Chinese version of this guide](keyboard-shortcuts.zh.md).* 

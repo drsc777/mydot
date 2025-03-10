@@ -2,8 +2,6 @@
 
 This guide will help you set up the same development environment as mine. The installation process is divided into several parts, following the recommended order.
 
-*Note: Chinese users can also check the [Chinese version of this guide](setup-guide.zh.md).*
-
 ## Prerequisites
 
 This setup is suitable for users familiar with terminals and command lines. If you're a beginner, you may need to learn some basics first.
