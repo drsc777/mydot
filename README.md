@@ -2,6 +2,17 @@
 
 这个仓库包含了我的完整开发环境配置，基于无鼠标操作理念，专注于高效编程体验。
 
+## 快速安装
+
+```bash
+# 克隆仓库
+git clone https://github.com/drsc777/mydot.git
+cd mydot
+
+# 运行安装脚本
+./install.sh
+```
+
 ## 环境概览
 
 我的开发环境由以下组件组成：
