@@ -6,7 +6,10 @@ NOTES_DIR=~/notes
 # 如果目录不存在，创建它 | If directory doesn't exist, create it
 if [ ! -d "$NOTES_DIR" ]; then
   echo "创建笔记目录: $NOTES_DIR | Creating notes directory: $NOTES_DIR"
-  mkdir -p "$NOTES_DIR"
+  mkdir -p "$NOTES_DIR/org"
+  mkdir -p "$NOTES_DIR/roam"
+  mkdir -p "$NOTES_DIR/journal"
+  mkdir -p "$NOTES_DIR/templates"
 fi
 
 cd "$NOTES_DIR"
@@ -15,12 +18,12 @@ cd "$NOTES_DIR"
 if [ ! -d ".git" ]; then
   echo "初始化Git仓库 | Initializing Git repository"
   git init
-  echo "# 我的笔记 | My Notes" > README.md
+  echo "# Abby's Notes System" > README.md
   git add README.md
   git commit -m "初始化笔记仓库 | Initialize notes repository"
   
   echo "请手动设置远程仓库，例如: | Please manually set up remote repository, for example:"
-  echo "git remote add origin https://github.com/你的用户名/notes.git | git remote add origin https://github.com/yourusername/notes.git"
+  echo "git remote add origin https://github.com/drsc777/notes.git | git remote add origin https://github.com/drsc777/notes.git"
   exit 0
 fi
 
@@ -41,5 +44,5 @@ if git remote | grep -q origin; then
   git push origin main || git push origin master || echo "推送失败，可能需要设置远程仓库 | Push failed, may need to set up remote repository"
 else
   echo "请先设置远程仓库，例如: | Please set up remote repository first, for example:"
-  echo "git remote add origin https://github.com/你的用户名/notes.git | git remote add origin https://github.com/yourusername/notes.git"
+  echo "git remote add origin https://github.com/drsc777/notes.git | git remote add origin https://github.com/drsc777/notes.git"
 fi 

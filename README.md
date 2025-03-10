@@ -2,7 +2,7 @@
 
 This repository contains my complete development environment configuration, based on a mouse-free philosophy, focused on efficient programming experience.
 
-[中文文档 (Chinese Version)](README.zh.md)
+[中文文档 (Chinese Version)](zh.docs/README.zh.md)
 
 ## Quick Installation
 
@@ -12,8 +12,7 @@ git clone https://github.com/drsc777/mydot.git
 cd mydot
 
 # Run installation script
-./install_en.sh # English version
-./install.sh    # Chinese version
+./install.sh    # Installation script
 ```
 
 ## Environment Overview
@@ -46,11 +45,8 @@ mydot/
 ├── .aerospace.toml      # Aerospace window manager configuration
 └── docs/                 # Documentation
     ├── setup-guide.md    # Installation guide (English)
-    ├── setup-guide.zh.md # Installation guide (Chinese)
     ├── keyboard-shortcuts.md    # Keyboard shortcuts reference (English)
-    ├── keyboard-shortcuts.zh.md # Keyboard shortcuts reference (Chinese)
-    ├── config-explanation.md    # Configuration explanation (English)
-    └── config-explanation.zh.md # Configuration explanation (Chinese)
+    └── config-explanation.md    # Configuration explanation (English)
 ```
 
 ## Key Features
@@ -73,13 +69,23 @@ For a complete list of all important keyboard shortcuts, please refer to the [Ke
 
 - All documentation is available in both English and Chinese
 - Each document has two versions:
-  - Main version (English): `filename.md`
-  - Chinese version: `filename.zh.md`
-- Installation scripts are available in both languages (`install.sh` and `install_en.sh`)
+  - Main version (English): `filename.md` in `docs/` directory
+  - Chinese version: `filename.zh.md` in `zh.docs/` directory
+- Installation script is available in both languages in the `install.sh` file
 
 ## Configuration Files Explanation
 
 For a detailed explanation of all configuration files, see the [Configuration Files Guide](docs/config-explanation.md)
+
+## Notes System
+
+This configuration works seamlessly with my [notes system](https://github.com/drsc777/notes) for knowledge management.
+
+Key features:
+- Automatic sync every 15 minutes
+- Org-roam for networked note-taking
+- Task management with TODO system
+- Journal for daily logging
 
 ## License
 
