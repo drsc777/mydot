@@ -40,7 +40,7 @@ mydot/
 ├── bin/                  # 实用脚本
 │   ├── sync-cursor-nvim.sh  # Cursor AI与NeoVim同步
 │   └── sync-notes.sh     # 笔记自动同步到GitHub
-├── config.toml           # Aerospace窗口管理器配置
+├── .aerospace.toml      # Aerospace窗口管理器配置
 └── docs/                 # 文档
     ├── setup-guide.md    # 安装指南
     └── keyboard-shortcuts.md # 快捷键参考
