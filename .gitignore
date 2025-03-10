@@ -1,0 +1,30 @@
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 编辑器临时文件
+*~
+\#*\#
+.\#*
+*.swp
+*.swo
+
+# Emacs生成文件
+.cache/
+.local/
+.emacs.d/
+elpa/
+auto-save-list/
+*.elc
+
+# NeoVim生成文件
+.netrwhist
+*/.vim/plugged/
+*/.vim/autoload/
+.luarc.json
+*.un~
+*.log
+
+# 个人敏感信息
+secrets.el
+personal.el 
