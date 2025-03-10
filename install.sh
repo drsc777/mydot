@@ -75,7 +75,7 @@ echo -e "${GREEN}NeoVim配置已复制.${NC}"
 cp tmux/.tmux.conf ~/.tmux.conf
 echo -e "${GREEN}Tmux配置已复制.${NC}"
 
-cp config.toml ~/.config/aerospace/
+cp .aerospace.toml ~/.config/aerospace/config.toml
 echo -e "${GREEN}Aerospace配置已复制.${NC}"
 
 cp bin/* ~/bin/
