@@ -4,6 +4,7 @@
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
+  "vim.timeout": 500,
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "j"],
@@ -47,5 +48,9 @@
   "editor.cursorBlinking": "solid",
   "vim.easymotion": true,
   "vim.sneak": true,
-  "vim.surround": true
+  "vim.surround": true,
+  "keyboard.dispatch": "keyCode",
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingQuotes": "never",
+  "editor.acceptSuggestionOnEnter": "off"
 } 
