@@ -21,6 +21,9 @@ brew install git emacs ripgrep fd tmux fswatch
 
 # Install NeoVim
 brew install neovim
+
+# Install Karabiner-Elements and Raycast
+brew install --cask karabiner-elements raycast
 ```
 
 ## 1. Install Doom Emacs
@@ -57,14 +60,21 @@ mkdir -p ~/.config/nvim/lua
 mkdir -p ~/.config/aerospace
 ```
 
-## 5. Create Scripts Directory
+## 5. Prepare Karabiner-Elements Configuration
+
+```bash
+# Create Karabiner configuration directory
+mkdir -p ~/.config/karabiner
+```
+
+## 6. Create Scripts Directory
 
 ```bash
 # Create bin directory
 mkdir -p ~/bin
 ```
 
-## 6. Install My Configuration
+## 7. Install My Configuration
 
 ### Clone Configuration Repository
 
@@ -90,12 +100,15 @@ cp ~/temp-dotfiles/tmux/.tmux.conf ~/.tmux.conf
 # Copy Aerospace configuration
 cp ~/temp-dotfiles/.aerospace.toml ~/.config/aerospace/config.toml
 
+# Copy Karabiner configuration
+cp -r ~/temp-dotfiles/karabiner/* ~/.config/karabiner/
+
 # Copy utility scripts
 cp ~/temp-dotfiles/bin/* ~/bin/
 chmod +x ~/bin/*.sh
 ```
 
-## 7. Apply Configuration
+## 8. Apply Configuration
 
 ### Doom Emacs
 
@@ -135,7 +148,7 @@ alias sync-notes="~/bin/sync-notes.sh"
 export PATH="$HOME/bin:$PATH"
 ```
 
-## 8. Create Notes Directory
+## 9. Create Notes Directory
 
 ```bash
 # Create notes directory structure
@@ -145,7 +158,7 @@ git init
 echo "# My Notes System" > README.md
 ```
 
-## 9. Set Up GitHub Repository (Optional)
+## 10. Set Up GitHub Repository (Optional)
 
 If you want to automatically sync notes to GitHub:
 
@@ -160,7 +173,22 @@ git commit -m "Initial commit"
 git push -u origin main
 ```
 
-## 10. Install Fonts (Recommended)
+## 11. Configure Karabiner-Elements
+
+1. Open Karabiner-Elements
+2. Go to "Complex Modifications" tab
+3. Click "Add rule"
+4. Enable the Vim navigation rules
+
+## 12. Configure Raycast
+
+1. Open Raycast (default shortcut is Command+Space)
+2. Follow the setup wizard
+3. Change the activation shortcut to Option+Space (to avoid conflict with Spotlight)
+4. Enable Window Management extension
+5. Configure keyboard shortcuts as described in `~/temp-dotfiles/raycast/raycast-config.md`
+
+## 13. Install Fonts (Recommended)
 
 For the best experience, install a programming font:
 

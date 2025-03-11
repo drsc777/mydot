@@ -24,6 +24,8 @@ My development environment consists of the following components:
 - **Cursor AI** - AI-assisted programming
 - **Tmux** - Terminal session management
 - **Aerospace** - Window manager (macOS)
+- **Karabiner-Elements** - Global Vim-style keyboard shortcuts
+- **Raycast** - Launcher and productivity tool
 
 ## Directory Structure
 
@@ -42,6 +44,11 @@ mydot/
 ├── bin/                  # Utility scripts
 │   ├── sync-cursor-nvim.sh  # Cursor AI and NeoVim synchronization
 │   └── sync-notes.sh     # Auto-sync notes to GitHub
+├── karabiner/            # Karabiner-Elements configuration
+│   ├── karabiner.json    # Main configuration file
+│   └── vim_navigation.json # Vim-style navigation rules
+├── raycast/              # Raycast configuration guide
+│   └── raycast-config.md # Setup instructions
 ├── .aerospace.toml      # Aerospace window manager configuration
 └── docs/                 # Documentation
     ├── setup-guide.md    # Installation guide (English)
@@ -56,6 +63,8 @@ mydot/
 3. **Note Management System**: Knowledge base built on Org-roam
 4. **Auto Synchronization**: Notes automatically committed to GitHub
 5. **Efficient Window Management**: Seamless window operations with Tmux and Aerospace
+6. **Global Vim Navigation**: Use Vim-style keys across all applications with Karabiner
+7. **Quick App Launching**: Fast application access with Raycast
 
 ## Installation Guide
 

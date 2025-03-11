@@ -24,11 +24,16 @@ fi
 echo -e "${BLUE}Installing necessary tools...${NC}"
 brew install git emacs neovim tmux ripgrep fd fswatch || true
 
+# Install Karabiner-Elements and Raycast
+echo -e "${BLUE}Installing Karabiner-Elements and Raycast...${NC}"
+brew install --cask karabiner-elements raycast || true
+
 # Create necessary directories
 echo -e "${BLUE}Creating necessary directories...${NC}"
 mkdir -p ~/.doom.d
 mkdir -p ~/.config/nvim/lua
 mkdir -p ~/.config/aerospace
+mkdir -p ~/.config/karabiner
 mkdir -p ~/bin
 mkdir -p ~/notes/{org,roam,journal,templates}
 
@@ -80,6 +85,10 @@ echo -e "${GREEN}Tmux configuration copied.${NC}"
 
 cp .aerospace.toml ~/.config/aerospace/config.toml
 echo -e "${GREEN}Aerospace configuration copied.${NC}"
+
+# Copy Karabiner configuration
+cp -r karabiner/* ~/.config/karabiner/
+echo -e "${GREEN}Karabiner-Elements configuration copied.${NC}"
 
 cp bin/* ~/bin/
 chmod +x ~/bin/*.sh
