@@ -188,32 +188,7 @@ git push -u origin main
 4. Enable Window Management extension
 5. Configure keyboard shortcuts as described in `~/temp-dotfiles/raycast/raycast-config.md`
 
-## 13. Install Fonts (Recommended)
-
-For the best experience, install a programming font:
-
-```bash
-brew tap homebrew/cask-fonts
-brew install --cask font-fira-code
-```
-
-## 13. Configure Vim for Xcode (Optional)
-
-If you use Xcode for development, you can add Vim keybindings with XVim2:
-
-1. Run the XVim2 installation script:
-   ```bash
-   ~/mydot/xvim/install_xvim.sh
-   ```
-
-2. Follow the on-screen instructions to:
-   - Create a code signing certificate
-   - Sign Xcode
-   - Enable the XVim2 plugin
-
-3. Restart Xcode and verify that Vim keybindings are working
-
-## 14. Configure Vim for Cursor
+## 13. Configure Vim for Cursor
 
 To optimize Cursor for Vim keybindings:
 
@@ -228,6 +203,15 @@ To optimize Cursor for Vim keybindings:
    - Install Vim configuration for Cursor
 
 3. Restart Cursor to apply the changes
+
+## 14. Install Fonts (Recommended)
+
+For the best experience, install a programming font:
+
+```bash
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code
+```
 
 ## Done!
 
