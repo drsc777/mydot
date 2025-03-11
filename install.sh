@@ -30,17 +30,26 @@ mkdir -p ~/.doom.d
 mkdir -p ~/.config/nvim/lua
 mkdir -p ~/.config/aerospace
 mkdir -p ~/bin
-mkdir -p ~/notes/{org,roam,journal}
+mkdir -p ~/Desktop/notes/{org,roam,journal,templates}
+
+# Create symbolic link
+if [ ! -L ~/notes ]; then
+    echo -e "${GREEN}Creating symbolic link ~/notes -> ~/Desktop/notes${NC}"
+    ln -s ~/Desktop/notes ~/notes
+fi
 
 # Initialize notes repository
 echo -e "${BLUE}Initializing notes repository...${NC}"
-if [ ! -d ~/notes/.git ]; then
-    cd ~/notes
+if [ ! -d ~/Desktop/notes/.git ]; then
+    echo -e "${RED}Notes repository not detected, initializing...${NC}"
+    cd ~/Desktop/notes
     git init
-    echo "# My Notes System" > README.md
+    echo "# Abby's Notes System" > README.md
     git add README.md
-    git commit -m "Initialize notes repository"
+    git commit -m "Initializing notes repository"
     echo -e "${GREEN}Notes repository initialized.${NC}"
+    echo -e "${BLUE}Please manually set up remote repository:${NC}"
+    echo -e "git remote add origin https://github.com/drsc777/notes.git${NC}"
 else
     echo -e "${GREEN}Notes repository already exists.${NC}"
 fi

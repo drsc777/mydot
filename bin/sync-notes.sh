@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # 设置笔记目录 | Set notes directory
+# 注意：我们使用~/notes，它是指向~/Desktop/notes的符号链接
+# Note: We use ~/notes which is a symbolic link to ~/Desktop/notes
 NOTES_DIR=~/notes
 
 # 如果目录不存在，创建它 | If directory doesn't exist, create it
@@ -10,6 +12,12 @@ if [ ! -d "$NOTES_DIR" ]; then
   mkdir -p "$NOTES_DIR/roam"
   mkdir -p "$NOTES_DIR/journal"
   mkdir -p "$NOTES_DIR/templates"
+  
+  # 如果是在桌面上创建的，则设置符号链接 | If created on desktop, set up symbolic link
+  if [ ! -L ~/notes ] && [ -d ~/Desktop/notes ]; then
+    echo "创建符号链接 | Creating symbolic link"
+    ln -s ~/Desktop/notes ~/notes
+  fi
 fi
 
 cd "$NOTES_DIR"

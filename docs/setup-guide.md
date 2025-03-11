@@ -139,11 +139,16 @@ export PATH="$HOME/bin:$PATH"
 
 ```bash
 # Create notes directory structure
-mkdir -p ~/notes/{org,roam,journal}
-cd ~/notes
+mkdir -p ~/Desktop/notes/{org,roam,journal,templates}
+cd ~/Desktop/notes
 git init
 echo "# My Notes System" > README.md
+
+# Create a symbolic link for compatibility
+ln -s ~/Desktop/notes ~/notes
 ```
+
+This symbolic link ensures that the notes can be accessed from both `~/notes` and `~/Desktop/notes`, maintaining compatibility with all scripts and configurations.
 
 ## 9. Set Up GitHub Repository (Optional)
 
