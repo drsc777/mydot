@@ -26,6 +26,7 @@ My development environment consists of the following components:
 - **Aerospace** - Window manager (macOS)
 - **Karabiner-Elements** - Global Vim-style keyboard shortcuts
 - **Raycast** - Launcher and productivity tool
+- **XVim2** - Vim keybindings for Xcode
 
 ## Directory Structure
 
@@ -49,6 +50,12 @@ mydot/
 │   └── vim_navigation.json # Vim-style navigation rules
 ├── raycast/              # Raycast configuration guide
 │   └── raycast-config.md # Setup instructions
+├── xvim/                 # XVim2 configuration for Xcode
+│   ├── xvimrc            # XVim configuration file
+│   └── install_xvim.sh   # XVim installation script
+├── cursor/               # Cursor app configuration
+│   ├── cursor_vim_settings.json # Vim settings for Cursor
+│   └── setup_keyrepeat.sh # Script to optimize key repeat
 ├── .aerospace.toml      # Aerospace window manager configuration
 └── docs/                 # Documentation
     ├── setup-guide.md    # Installation guide (English)
@@ -65,6 +72,8 @@ mydot/
 5. **Efficient Window Management**: Seamless window operations with Tmux and Aerospace
 6. **Global Vim Navigation**: Use Vim-style keys across all applications with Karabiner
 7. **Quick App Launching**: Fast application access with Raycast
+8. **Vim in Xcode**: XVim2 integration for Vim keybindings in Xcode
+9. **Optimized Key Repeat**: Improved key repeat settings for Vim operations
 
 ## Installation Guide
 

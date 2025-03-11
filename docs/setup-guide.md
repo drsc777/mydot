@@ -197,6 +197,38 @@ brew tap homebrew/cask-fonts
 brew install --cask font-fira-code
 ```
 
+## 13. Configure Vim for Xcode (Optional)
+
+If you use Xcode for development, you can add Vim keybindings with XVim2:
+
+1. Run the XVim2 installation script:
+   ```bash
+   ~/mydot/xvim/install_xvim.sh
+   ```
+
+2. Follow the on-screen instructions to:
+   - Create a code signing certificate
+   - Sign Xcode
+   - Enable the XVim2 plugin
+
+3. Restart Xcode and verify that Vim keybindings are working
+
+## 14. Configure Vim for Cursor
+
+To optimize Cursor for Vim keybindings:
+
+1. Run the Cursor key repeat setup script:
+   ```bash
+   ~/mydot/cursor/setup_keyrepeat.sh
+   ```
+
+2. This script will:
+   - Optimize system-wide key repeat settings
+   - Configure Cursor-specific settings
+   - Install Vim configuration for Cursor
+
+3. Restart Cursor to apply the changes
+
 ## Done!
 
 Congratulations! You have now set up a complete mouse-free development environment. Please refer to the [Keyboard Shortcuts Guide](keyboard-shortcuts.md) to learn how to use this toolset. 

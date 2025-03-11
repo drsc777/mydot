@@ -28,6 +28,26 @@ brew install git emacs neovim tmux ripgrep fd fswatch || true
 echo -e "${BLUE}Installing Karabiner-Elements and Raycast...${NC}"
 brew install --cask karabiner-elements raycast || true
 
+# Check if Xcode is installed
+if [ -d "/Applications/Xcode.app" ]; then
+    echo -e "${BLUE}Xcode detected, preparing XVim2 setup...${NC}"
+    # We don't run the XVim installer directly as it requires user interaction
+    echo -e "${GREEN}To install XVim2 for Xcode, run:${NC}"
+    echo -e "${GREEN}~/mydot/xvim/install_xvim.sh${NC}"
+else
+    echo -e "${BLUE}Xcode not detected, skipping XVim2 setup.${NC}"
+fi
+
+# Check if Cursor is installed
+if [ -d "/Applications/Cursor.app" ]; then
+    echo -e "${BLUE}Cursor detected, setting up Vim mode and key repeat...${NC}"
+    ~/mydot/cursor/setup_keyrepeat.sh
+else
+    echo -e "${BLUE}Cursor not detected, skipping Cursor Vim setup.${NC}"
+    echo -e "${GREEN}To set up Cursor Vim mode after installing Cursor, run:${NC}"
+    echo -e "${GREEN}~/mydot/cursor/setup_keyrepeat.sh${NC}"
+fi
+
 # Create necessary directories
 echo -e "${BLUE}Creating necessary directories...${NC}"
 mkdir -p ~/.doom.d
