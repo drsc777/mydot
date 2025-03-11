@@ -48,6 +48,15 @@ In this configuration:
 | `C-c C-t` | Cycle TODO state |
 | `C-c C-s` | Schedule item |
 | `C-c C-d` | Set deadline |
+| `C-c C-c` | add tags |
+| `C-c C-e` | export file |
+| `q` | quit export file |
+| `C-x C-s` | save file |
+| `C-x C-f` | open file |
+| `M-up/down` | move a headline up or down |
+| `M-left/right` | promote or demote a headline |
+| `M-RET` | insert a new headline |
+
 
 ### Org Roam
 
