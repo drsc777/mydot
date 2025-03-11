@@ -194,3 +194,20 @@
            "* TODO %?\n  %i\n  %a")
           ("n" "Note" entry (file+headline "~/notes/org/inbox.org" "Notes")
            "* %? :NOTE:\n  %i\n  %a"))))
+
+;; 拼写检查配置
+(after! ispell
+  ;; 配置ispell程序路径
+  (setq ispell-program-name "/opt/homebrew/bin/ispell")
+  ;; 如果您想使用aspell替代ispell，请使用下面的配置
+  ;; (setq ispell-program-name "/opt/homebrew/bin/aspell")
+  ;; (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_US"))
+
+  ;; 配置不应该被检查的面部（如代码块等）
+  (add-to-list 'ispell-skip-region-alist '("\\$\\$" . "\\$\\$"))
+  (add-to-list 'ispell-skip-region-alist '("\\\\begin{code}" . "\\\\end{code}"))
+  (add-to-list 'ispell-skip-region-alist '("\\\\begin{minted}" . "\\\\end{minted}"))
+  (add-to-list 'ispell-skip-region-alist '("\\\\begin{verbatim}" . "\\\\end{verbatim}")))
+
+;; 如果你想支持中文拼写检查
+;; (setq ispell-dictionary "en_US,zh_CN")
