@@ -155,6 +155,9 @@
   (setq org-todo-keywords
         '((sequence "TODO(t)" "IN-PROGRESS(i)" "WAITING(w)" "|" "DONE(d)")))
   
+  ;; 设置agenda文件列表
+  (setq org-agenda-files '("~/notes/org/" "~/notes/"))
+  
   ;; Org Babel支持
   (org-babel-do-load-languages
    'org-babel-load-languages
