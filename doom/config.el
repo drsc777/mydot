@@ -43,6 +43,85 @@
 (setq org-directory "~/notes/org/")
 (setq org-roam-directory (file-truename "~/notes/roam/"))
 
+;; ==========================================================
+;; Org Agenda 配置
+;; ==========================================================
+
+;; 设置agenda文件列表 - 确保包含所有相关文件
+(setq org-agenda-files '("~/notes/" 
+                         "~/notes/org/"
+                         "~/notes/s25.org"
+                         "~/notes/todo.org"))
+
+;; 设置agenda显示参数
+(setq org-agenda-span 14                     ;; 显示两周的内容
+      org-agenda-start-on-weekday nil        ;; 从今天开始显示
+      org-agenda-start-day "-0d"             ;; 从今天开始
+      org-agenda-todo-ignore-scheduled nil   ;; 不忽略计划任务
+      org-agenda-todo-ignore-deadlines nil   ;; 不忽略截止任务
+      org-agenda-todo-ignore-timestamp nil   ;; 不忽略时间戳任务
+      org-agenda-skip-scheduled-if-done t    ;; 跳过已完成的计划任务
+      org-agenda-skip-deadline-if-done t     ;; 跳过已完成的截止任务
+      org-agenda-include-deadlines t         ;; 包含截止日期
+      org-agenda-include-diary nil           ;; 不包含日记
+      org-agenda-text-search-extra-files '(agenda-archives) ;; 搜索存档文件
+      org-agenda-prefix-format '((agenda . " %i %-12:c%?-12t% s") ;; 自定义显示格式
+                                 (todo . " %i %-12:c")
+                                 (tags . " %i %-12:c")
+                                 (search . " %i %-12:c")))
+
+;; 设置agenda自定义视图
+(setq org-agenda-custom-commands
+      '(("d" "Dashboard"
+         ((agenda "" ((org-agenda-span 7)
+                     (org-agenda-start-day "-0d")
+                     (org-agenda-start-on-weekday nil)))
+          (alltodo ""
+                  ((org-agenda-overriding-header "所有任务")
+                   (org-agenda-sorting-strategy '(priority-down todo-state-down deadline-up))))))
+
+        ("n" "Agenda and all TODOs"
+         ((agenda "" nil)
+          (alltodo "" nil))
+         nil)
+        
+        ("s" "School Tasks"
+         ((agenda "" 
+                  ((org-agenda-span 14)
+                   (org-agenda-start-on-weekday nil)
+                   (org-agenda-prefix-format "  %?-12t% s")))
+          (tags-todo "school"
+                    ((org-agenda-overriding-header "School Tasks")
+                     (org-agenda-sorting-strategy '(priority-down deadline-up)))))
+         nil)))
+
+;; 确保在agenda中包含今天的任务
+(setq org-agenda-start-with-log-mode t)
+(setq org-agenda-start-with-clockreport-mode nil)
+
+;; 在Doom中正确启用org-agenda模块
+(after! org
+  ;; 设置基本参数
+  (setq org-log-done 'time                   ;; 完成任务时记录时间
+        org-log-into-drawer t                ;; 记录到抽屉中
+        org-agenda-window-setup 'current-window ;; 在当前窗口打开agenda
+        org-agenda-restore-windows-after-quit t) ;; 退出后恢复窗口配置
+  
+  ;; 确保能够正确识别待办任务
+  (setq org-agenda-todo-keyword-format "%-12s") ;; 确保足够空间显示状态
+)
+
+;; 添加agenda快捷键绑定
+(map! :leader
+      (:prefix "o"
+       :desc "Agenda" "a" #'org-agenda
+       :desc "Todo list" "t" #'org-todo-list))
+
+;; 常规agenda快捷键
+(global-set-key (kbd "C-c a") 'org-agenda)
+
+;; ==========================================================
+
 (setq org-roam-file-extensions '("org"))
 
 ;; (use-package! pangu-spacing
