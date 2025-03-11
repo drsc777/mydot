@@ -156,7 +156,28 @@
         '((sequence "TODO(t)" "IN-PROGRESS(i)" "WAITING(w)" "|" "DONE(d)")))
   
   ;; 设置agenda文件列表
-  (setq org-agenda-files '("~/notes/org/" "~/notes/"))
+  (setq org-agenda-files '("~/notes/"))
+  
+  ;; 设置agenda视图
+  (setq org-agenda-custom-commands
+        '(("n" "Agenda and all TODOs"
+           ((agenda "" nil)
+            (alltodo "" nil))
+           nil)
+          ("s" "School Tasks"
+           ((agenda "" 
+                    ((org-agenda-span 14)                    ;; 显示两周
+                     (org-agenda-start-on-weekday nil)      ;; 从今天开始
+                     (org-agenda-prefix-format "  %?-12t% s"))) ;; 自定义显示格式
+            (tags-todo "school"
+                      ((org-agenda-overriding-header "School Tasks")
+                       (org-agenda-sorting-strategy '(priority-down deadline-up)))))
+           nil)))
+  
+  ;; 设置默认agenda跨度
+  (setq org-agenda-span 14
+        org-agenda-start-on-weekday nil  ;; 从今天开始显示
+        org-agenda-start-day "-3d")      ;; 从3天前开始
   
   ;; Org Babel支持
   (org-babel-do-load-languages
