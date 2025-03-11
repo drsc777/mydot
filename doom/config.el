@@ -155,30 +155,6 @@
   (setq org-todo-keywords
         '((sequence "TODO(t)" "IN-PROGRESS(i)" "WAITING(w)" "|" "DONE(d)")))
   
-  ;; 设置agenda文件列表
-  (setq org-agenda-files '("~/notes/"))
-  
-  ;; 设置agenda视图
-  (setq org-agenda-custom-commands
-        '(("n" "Agenda and all TODOs"
-           ((agenda "" nil)
-            (alltodo "" nil))
-           nil)
-          ("s" "School Tasks"
-           ((agenda "" 
-                    ((org-agenda-span 14)                    ;; 显示两周
-                     (org-agenda-start-on-weekday nil)      ;; 从今天开始
-                     (org-agenda-prefix-format "  %?-12t% s"))) ;; 自定义显示格式
-            (tags-todo "school"
-                      ((org-agenda-overriding-header "School Tasks")
-                       (org-agenda-sorting-strategy '(priority-down deadline-up)))))
-           nil)))
-  
-  ;; 设置默认agenda跨度
-  (setq org-agenda-span 14
-        org-agenda-start-on-weekday nil  ;; 从今天开始显示
-        org-agenda-start-day "-3d")      ;; 从3天前开始
-  
   ;; Org Babel支持
   (org-babel-do-load-languages
    'org-babel-load-languages
@@ -235,32 +211,3 @@
 
 ;; 如果你想支持中文拼写检查
 ;; (setq ispell-dictionary "en_US,zh_CN")
-
-;; 设置org-agenda基础配置
-(setq org-agenda-files '("~/notes/"))
-(setq org-agenda-span 14
-      org-agenda-start-on-weekday nil
-      org-agenda-start-day "-3d")
-
-;; 设置自定义agenda视图
-(setq org-agenda-custom-commands
-      '(("n" "Agenda and all TODOs"
-         ((agenda "" nil)
-          (alltodo "" nil))
-         nil)
-        ("s" "School Tasks"
-         ((agenda "" 
-                  ((org-agenda-span 14)
-                   (org-agenda-start-on-weekday nil)
-                   (org-agenda-prefix-format "  %?-12t% s")))
-          (tags-todo "school"
-                    ((org-agenda-overriding-header "School Tasks")
-                     (org-agenda-sorting-strategy '(priority-down deadline-up)))))
-         nil)))
-
-;; 添加快捷键绑定
-(map! :leader
-      :desc "Org agenda"
-      "o a" #'org-agenda-list
-      :desc "Org todo list"
-      "o t" #'org-todo-list)
