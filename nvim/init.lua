@@ -48,98 +48,101 @@ vim.cmd [[
   let g:ale_fix_on_save = 1
 ]]
 
--- telescope binds
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-
--- 安装packer插件管理器
-local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-  vim.cmd [[packadd packer.nvim]]
+-- 将telescope快捷键绑定移到插件加载后
+local telescope_setup = function()
+  local telescope_loaded, builtin = pcall(require, 'telescope.builtin')
+  if telescope_loaded then
+    vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+    vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+    vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+    vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+  end
 end
+
+-- 在VimEnter事件中设置telescope快捷键
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    telescope_setup()
+  end,
+})
 
 -- 自动重新加载配置
 vim.cmd [[
-  augroup packer_user_config
+  augroup config_reload
     autocmd!
-    autocmd BufWritePost init.lua source <afile> | PackerCompile
+    autocmd BufWritePost init.lua source <afile>
   augroup end
 ]]
 
--- 插件安装
-require('packer').startup(function(use)
-  -- 核心插件
-  use 'wbthomason/packer.nvim'
+-- 以下是旧的 packer 配置，现在使用 lazy.nvim 替代
+-- require('packer').startup(function(use)
+--   -- 核心插件
+--   use 'wbthomason/packer.nvim'
   
-  -- LSP支持
-  use {
-    'VonHeikemen/lsp-zero.nvim',
-    requires = {
-      -- LSP Support
-      {'neovim/nvim-lspconfig'},
-      {'williamboman/mason.nvim'},
-      {'williamboman/mason-lspconfig.nvim'},
-
-      -- 自动补全
-      {'hrsh7th/nvim-cmp'},
-      {'hrsh7th/cmp-buffer'},
-      {'hrsh7th/cmp-path'},
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'hrsh7th/cmp-nvim-lua'},
-    }
-  }
-
-  -- Copilot AI补全
-  use 'github/copilot.vim'
-
-  -- 文件模糊搜索
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = {'nvim-lua/plenary.nvim'}
-  }
-
-  -- 自动保存
-  use 'Pocco81/AutoSave.nvim'
-
-  -- 文件树
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {'kyazdani42/nvim-web-devicons'}
-  }
-
-  -- 代码高亮
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
-
-  -- 状态栏
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons'}
-  }
-
-  -- Git集成
-  use 'lewis6991/gitsigns.nvim'
-
-  -- 与Tmux集成
-  use 'christoomey/vim-tmux-navigator'
-
-  -- 自动配对括号
-  use 'windwp/nvim-autopairs'
-
-  -- 注释插件
-  use 'numToStr/Comment.nvim'
-
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)
+--   -- LSP支持
+--   use {
+--     'VonHeikemen/lsp-zero.nvim',
+--     requires = {
+--       -- LSP Support
+--       {'neovim/nvim-lspconfig'},
+--       {'williamboman/mason.nvim'},
+--       {'williamboman/mason-lspconfig.nvim'},
+--
+--       -- 自动补全
+--       {'hrsh7th/nvim-cmp'},
+--       {'hrsh7th/cmp-buffer'},
+--       {'hrsh7th/cmp-path'},
+--       {'hrsh7th/cmp-nvim-lsp'},
+--       {'hrsh7th/cmp-nvim-lua'},
+--     }
+--   }
+--
+--   -- Copilot AI补全
+--   use 'github/copilot.vim'
+--
+--   -- 文件模糊搜索
+--   use {
+--     'nvim-telescope/telescope.nvim',
+--     requires = {'nvim-lua/plenary.nvim'}
+--   }
+--
+--   -- 自动保存
+--   use 'Pocco81/AutoSave.nvim'
+--
+--   -- 文件树
+--   use {
+--     'kyazdani42/nvim-tree.lua',
+--     requires = {'kyazdani42/nvim-web-devicons'}
+--   }
+--
+--   -- 代码高亮
+--   use {
+--     'nvim-treesitter/nvim-treesitter',
+--     run = ':TSUpdate'
+--   }
+--
+--   -- 状态栏
+--   use {
+--     'nvim-lualine/lualine.nvim',
+--     requires = {'kyazdani42/nvim-web-devicons'}
+--   }
+--
+--   -- Git集成
+--   use 'lewis6991/gitsigns.nvim'
+--
+--   -- 与Tmux集成
+--   use 'christoomey/vim-tmux-navigator'
+--
+--   -- 自动配对括号
+--   use 'windwp/nvim-autopairs'
+--
+--   -- 注释插件
+--   use 'numToStr/Comment.nvim'
+--
+--   if packer_bootstrap then
+--     require('packer').sync()
+--   end
+-- end)
 
 -- 基本设置
 vim.opt.number = true
