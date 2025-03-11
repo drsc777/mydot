@@ -59,6 +59,29 @@ In this configuration:
 | `SPC n r c` | Capture new note |
 | `SPC n r t` | Toggle roam buffer |
 
+### Log Mode
+
+| Shortcut | Function |
+|----------|----------|
+| `j` | Move down one line |
+| `k` | Move up one line |
+| `gg` | Go to beginning of buffer |
+| `G` | Go to end of buffer |
+| `/` | Search forward |
+| `?` | Search backward |
+| `n` | Next search result |
+| `N` | Previous search result |
+| `f` | Filter log by regex |
+| `F` | Clear filter |
+| `]f` | Next file |
+| `[f` | Previous file |
+| `SPC m g` | Highlight log level: error |
+| `SPC m w` | Highlight log level: warning |
+| `SPC m i` | Highlight log level: info |
+| `SPC m d` | Highlight log level: debug |
+| `C-c C-f` | Toggle follow mode (tail -f) |
+| `C-c C-e` | Export filtered log to new buffer |
+
 ## NeoVim Shortcuts
 
 ### Basic Navigation
