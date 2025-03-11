@@ -56,3 +56,10 @@
 (package! vterm)
 (package! super-save)
 (package! org-journal)
+
+;; 日志模式相关包
+(package! logview)
+(package! origami)
+(package! nginx-mode)
+(package! dockerfile-mode)
+(package! yaml-mode)
