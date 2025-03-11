@@ -51,7 +51,7 @@ echo -e "${GREEN}   - Continue and create the certificate${NC}"
 
 # Copy .xvimrc
 echo -e "${BLUE}Copying xvimrc file...${NC}"
-cp ~/mydot/xvim/xvimrc ~/.xvimrc
+cp ~/Desktop/mydot/xvim/xvimrc ~/.xvimrc
 
 # Clean up
 echo -e "${BLUE}Cleaning up temporary files...${NC}"

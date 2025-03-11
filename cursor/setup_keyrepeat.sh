@@ -24,7 +24,7 @@ mkdir -p "$CURSOR_CONFIG_DIR"
 
 # Copy Vim settings
 echo -e "${BLUE}Copying Vim settings for Cursor...${NC}"
-cp ~/mydot/cursor/cursor_vim_settings.json "$CURSOR_CONFIG_DIR/settings.json"
+cp ~/Desktop/mydot/cursor/cursor_vim_settings.json "$CURSOR_CONFIG_DIR/settings.json"
 
 # Apply Cursor-specific key repeat settings
 echo -e "${BLUE}Setting up key repeat specifically for Cursor...${NC}"
