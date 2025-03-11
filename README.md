@@ -87,8 +87,6 @@ Key features:
 - Task management with TODO system
 - Journal for daily logging
 
-> **Note**: The notes system uses a symbolic link from `~/notes` to `~/Desktop/notes` for compatibility. This ensures all scripts and configurations work correctly regardless of which path is used.
-
 ## License
 
 MIT 

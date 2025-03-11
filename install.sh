@@ -30,19 +30,13 @@ mkdir -p ~/.doom.d
 mkdir -p ~/.config/nvim/lua
 mkdir -p ~/.config/aerospace
 mkdir -p ~/bin
-mkdir -p ~/Desktop/notes/{org,roam,journal,templates}
-
-# Create symbolic link
-if [ ! -L ~/notes ]; then
-    echo -e "${GREEN}Creating symbolic link ~/notes -> ~/Desktop/notes${NC}"
-    ln -s ~/Desktop/notes ~/notes
-fi
+mkdir -p ~/notes/{org,roam,journal,templates}
 
 # Initialize notes repository
 echo -e "${BLUE}Initializing notes repository...${NC}"
-if [ ! -d ~/Desktop/notes/.git ]; then
+if [ ! -d ~/notes/.git ]; then
     echo -e "${RED}Notes repository not detected, initializing...${NC}"
-    cd ~/Desktop/notes
+    cd ~/notes
     git init
     echo "# Abby's Notes System" > README.md
     git add README.md
