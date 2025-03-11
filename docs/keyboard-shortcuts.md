@@ -48,6 +48,21 @@ In this configuration:
 | `C-c C-t` | Cycle TODO state |
 | `C-c C-s` | Schedule item |
 | `C-c C-d` | Set deadline |
+| `C-c C-c` | Toggle checkbox/tag |
+| `C-c C-l` | Insert link |
+| `C-c C-e` | Export document |
+| `C-c '` | Edit code block |
+| `C-c C-,` | Insert template (structure) |
+| `C-c C-.` | Insert timestamp |
+| `C-c >` | Insert timestamp with calendar |
+| `C-c C-x C-i` | Start clock on item |
+| `C-c C-x C-o` | Stop clock on item |
+| `C-c C-x C-r` | Insert clock report |
+| `C-c C-x C-j` | Jump to current clocked task |
+| `SPC m b` | Toggle checkbox |
+| `SPC m p` | Set property |
+| `SPC m a` | Toggle archive |
+| `SPC m r` | Insert ruler (horizontal line) |
 
 ### Org Roam
 
@@ -59,28 +74,44 @@ In this configuration:
 | `SPC n r c` | Capture new note |
 | `SPC n r t` | Toggle roam buffer |
 
-### Log Mode
+### Org Agenda
 
 | Shortcut | Function |
 |----------|----------|
-| `j` | Move down one line |
-| `k` | Move up one line |
-| `gg` | Go to beginning of buffer |
-| `G` | Go to end of buffer |
-| `/` | Search forward |
-| `?` | Search backward |
-| `n` | Next search result |
-| `N` | Previous search result |
-| `f` | Filter log by regex |
-| `F` | Clear filter |
-| `]f` | Next file |
-| `[f` | Previous file |
-| `SPC m g` | Highlight log level: error |
-| `SPC m w` | Highlight log level: warning |
-| `SPC m i` | Highlight log level: info |
-| `SPC m d` | Highlight log level: debug |
-| `C-c C-f` | Toggle follow mode (tail -f) |
-| `C-c C-e` | Export filtered log to new buffer |
+| `SPC o a a` | Open agenda |
+| `SPC o a d` | Day view |
+| `SPC o a w` | Week view |
+| `SPC o a m` | Month view |
+| `SPC o a y` | Year view |
+| `SPC o a t` | Show TODO list |
+| `SPC o a T` | Show calendar TODO list |
+| `SPC o a s` | Search agenda |
+| `C-c C-w` | Refile task |
+| `r` | Refresh agenda (in agenda view) |
+| `f` | Forward in time (in agenda view) |
+| `b` | Backward in time (in agenda view) |
+| `j/k` | Navigate items (in agenda view) |
+| `t` | Cycle TODO state (in agenda view) |
+| `d` | Set deadline (in agenda view) |
+| `s` | Schedule item (in agenda view) |
+| `e` | Export agenda view |
+| `q` | Quit agenda view |
+
+### Org Journal
+
+| Shortcut | Function |
+|----------|----------|
+| `SPC o j j` | Create new journal entry for today |
+| `SPC o j J` | Create new journal entry (choose date) |
+| `SPC o j d` | View journal for day |
+| `SPC o j n` | Go to next journal entry |
+| `SPC o j p` | Go to previous journal entry |
+| `SPC o j s` | Search journal entries |
+| `SPC o j f` | Find journal entry by date |
+| `SPC o j F` | Find all journal entries for current file |
+| `SPC o j w` | Create weekly summary |
+| `SPC o j m` | Create monthly summary |
+| `SPC o j y` | Create yearly summary |
 
 ## NeoVim Shortcuts
 
