@@ -1,9 +1,5 @@
 vim.g.mapleader = ' '
-
--- 终端颜色支持
 vim.opt.termguicolors = true
-vim.opt.t_Co = 256
-vim.opt.background = "dark"
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -20,7 +16,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("j.plugins")
 
--- 基本设置
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
+
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.number = true
 vim.opt.relativenumber = true
