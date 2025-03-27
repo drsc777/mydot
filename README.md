@@ -21,6 +21,7 @@ My development environment consists of the following components:
 
 - **Doom Emacs** - Note management and Org Mode
 - **NeoVim** - Primary coding tool
+- **Kitty** - Modern, GPU-accelerated terminal emulator
 - **Cursor AI** - AI-assisted programming
 - **Tmux** - Terminal session management
 - **Aerospace** - Window manager (macOS)
@@ -39,11 +40,15 @@ mydot/
 ├── nvim/                 # NeoVim configuration
 │   ├── init.lua          # Main configuration file
 │   └── lua/              # Lua modules
+├── kitty/                # Kitty terminal configuration
+│   ├── kitty.conf        # Main configuration file
+│   └── theme.conf        # Color scheme configuration
 ├── tmux/                 # Tmux configuration
 │   └── .tmux.conf        # Main configuration file
 ├── bin/                  # Utility scripts
 │   ├── sync-cursor-nvim.sh  # Cursor AI and NeoVim synchronization
-│   └── sync-notes.sh     # Auto-sync notes to GitHub
+│   ├── sync-notes.sh     # Auto-sync notes to GitHub
+│   └── set-kitty-default.sh # Set Kitty as default terminal
 ├── karabiner/            # Karabiner-Elements configuration
 │   ├── karabiner.json    # Main configuration file
 │   └── vim_navigation.json # Vim-style navigation rules
@@ -62,13 +67,14 @@ mydot/
 ## Key Features
 
 1. **Mouse-free Workflow**: All tools are configured to ensure complete keyboard operation
-2. **AI-enhanced Programming**: Integration with GitHub Copilot and Cursor AI
-3. **Note Management System**: Knowledge base built on Org-roam
-4. **Auto Synchronization**: Notes automatically committed to GitHub
-5. **Efficient Window Management**: Seamless window operations with Tmux and Aerospace
-6. **Global Vim Navigation**: Use Vim-style keys across all applications with Karabiner
-7. **Quick App Launching**: Fast application access with Raycast
-8. **Optimized Key Repeat**: Improved key repeat settings for Vim operations
+2. **Modern Terminal**: GPU-accelerated Kitty terminal with true color support
+3. **AI-enhanced Programming**: Integration with GitHub Copilot and Cursor AI
+4. **Note Management System**: Knowledge base built on Org-roam
+5. **Auto Synchronization**: Notes automatically committed to GitHub
+6. **Efficient Window Management**: Seamless window operations with Tmux and Aerospace
+7. **Global Vim Navigation**: Use Vim-style keys across all applications with Karabiner
+8. **Quick App Launching**: Fast application access with Raycast
+9. **Optimized Key Repeat**: Improved key repeat settings for Vim operations
 
 ## Installation Guide
 

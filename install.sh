@@ -24,9 +24,13 @@ fi
 echo -e "${BLUE}Installing necessary tools...${NC}"
 brew install git emacs neovim tmux ripgrep fd fswatch || true
 
-# Install Karabiner-Elements and Raycast
-echo -e "${BLUE}Installing Karabiner-Elements and Raycast...${NC}"
-brew install --cask karabiner-elements raycast || true
+# Install Karabiner-Elements, Raycast, and Kitty
+echo -e "${BLUE}Installing Karabiner-Elements, Raycast, and Kitty...${NC}"
+brew install --cask karabiner-elements raycast kitty || true
+
+# Install JetBrains Mono Nerd Font
+echo -e "${BLUE}Installing JetBrains Mono Nerd Font...${NC}"
+brew install --cask font-jetbrains-mono || true
 
 # Check if Cursor is installed
 if [ -d "/Applications/Cursor.app" ]; then
@@ -44,6 +48,7 @@ mkdir -p ~/.doom.d
 mkdir -p ~/.config/nvim/lua
 mkdir -p ~/.config/aerospace
 mkdir -p ~/.config/karabiner
+mkdir -p ~/.config/kitty
 mkdir -p ~/bin
 mkdir -p ~/notes/{org,roam,journal,templates}
 
@@ -90,6 +95,9 @@ echo -e "${GREEN}Doom Emacs configuration copied.${NC}"
 cp -r nvim/* ~/.config/nvim/
 echo -e "${GREEN}NeoVim configuration copied.${NC}"
 
+cp -r kitty/* ~/.config/kitty/
+echo -e "${GREEN}Kitty configuration copied.${NC}"
+
 cp tmux/.tmux.conf ~/.tmux.conf
 echo -e "${GREEN}Tmux configuration copied.${NC}"
 
@@ -133,6 +141,10 @@ else
     echo -e "${GREEN}Aliases already exist in $SHELL_RC.${NC}"
 fi
 
+# Set Kitty as default terminal
+echo -e "${BLUE}Setting Kitty as default terminal...${NC}"
+~/bin/set-kitty-default.sh
+
 # Sync Doom Emacs configuration
 echo -e "${BLUE}Syncing Doom Emacs configuration...${NC}"
 ~/.emacs.d/bin/doom sync
@@ -149,5 +161,6 @@ echo -e "   ${GREEN}cd ~/notes${NC}"
 echo -e "   ${GREEN}git remote add origin https://github.com/drsc777/notes.git${NC}"
 echo -e "   ${GREEN}git push -u origin main${NC}"
 echo -e "3. Check ${GREEN}docs/keyboard-shortcuts.md${NC} to learn all keyboard shortcuts"
+echo -e "4. Kitty has been set as your default terminal. Please restart your computer for changes to take effect."
 echo -e ""
-echo -e "It's recommended to restart your terminal to apply all changes" 
+echo -e "It's recommended to restart your computer to apply all changes" 
