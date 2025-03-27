@@ -15,9 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("j.plugins")
 
-vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
-
+-- 基本设置
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.number = true
 vim.opt.relativenumber = true
