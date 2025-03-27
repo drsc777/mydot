@@ -1,5 +1,10 @@
 vim.g.mapleader = ' '
 
+-- 终端颜色支持
+vim.opt.termguicolors = true
+vim.opt.t_Co = 256
+vim.opt.background = "dark"
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({

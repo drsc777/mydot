@@ -3,25 +3,18 @@ return {
   priority = 1000,
   config = function()
     require("gruvbox").setup({
-      terminal_colors = true, -- 启用终端颜色
+      terminal_colors = true,
       undercurl = true,
       underline = true,
       bold = true,
-      italic = {
-        strings = true,
-        comments = true,
-        operators = false,
-        folds = true,
-      },
+      italic = true,
       strikethrough = true,
       invert_selection = false,
       invert_signs = false,
       invert_tabline = false,
       invert_intend_guides = false,
-      inverse = true, -- 启用反色
-      contrast = "", -- 可以设置为 "soft", "medium" 或 "hard"
-      palette_overrides = {},
-      overrides = {},
+      inverse = true,
+      contrast = "hard",
       dim_inactive = false,
       transparent_mode = false,
     })
